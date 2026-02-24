@@ -504,6 +504,33 @@ module schism_glbl
   !(npa). evap water flux in ice model [kg/s/m/m]. 
   real(rkind),save,allocatable :: ice_evap(:)
   real(rkind),save,allocatable :: srad_o(:)
+  real(rkind),save,allocatable :: sflux_o(:)
+  real(rkind),save,allocatable :: aice(:)
+   
+  !>---------------------------------------------------
+  !         Creating vars to dump cice fields to
+  !>---------------------------------------------------
+  real(rkind), allocatable, save, target :: uvice(:)
+  real(rkind), allocatable, save, target :: vvice(:)
+  real(rkind), allocatable, save, target :: taux(:)
+  real(rkind), allocatable, save, target :: tauy(:)
+  real(rkind), allocatable, save, target :: vsno(:)
+  real(rkind), allocatable, save, target :: vice(:)
+  real(rkind), allocatable, save, target :: ifresh_flux(:)
+  real(rkind), allocatable, save, target :: isalt_flux(:)
+  real(rkind), allocatable, save, target :: iheat_flux(:)
+  real(rkind), allocatable, save, target :: isw_pen(:)
+  real(rkind), allocatable, save, target :: frzmlt(:)
+  real(rkind), allocatable, save, target :: CdnIO(:) 
+  
+  !>---------------------------------------------------
+  !         CICE coupling aux variables
+  !>---------------------------------------------------           
+  real(rkind), allocatable, save, target :: fluxprc_ocn(:) 
+  real(rkind), allocatable, save, target :: fluxevp_ocn(:) 
+  real(rkind), allocatable, save, target :: sflux_ocn(:)   
+  real(rkind), allocatable, save, target :: srad_ocn(:)    
+
   logical,save,allocatable :: lhas_ice(:)
   logical,save :: lice_free_gb
   real(rkind),save,allocatable :: deta1_dxy_elem(:,:)
