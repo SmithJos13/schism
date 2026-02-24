@@ -693,14 +693,14 @@
 !$OMP end parallel do
 #endif /*not USE_ATMOS*/
 
-#ifdef USE_CICE
+!#ifdef USE_CICE
         do i=1,npa
           fluxprc_ocn(i) = fluxprc(i)
           fluxevp_ocn(i) = fluxevp(i)
           sflux_ocn(i)   = sflux(i)
           srad_ocn(i)    = srad(i)
         enddo
-#endif /*USE_CICE*/
+!#endif /*USE_CICE*/
       endif !nws=4
 
 #ifdef USE_SIMPLE_WIND
@@ -1007,7 +1007,7 @@
 !$OMP   do
 
 
-#ifdef USE_CICE
+!#ifdef USE_CICE
   !>--------------------------------------------------------
   !>              Imported values from CICE
   !>         CICE-UFS coupling importing variables
@@ -1128,7 +1128,7 @@
   !>--------------------------------------------------------
   !> end CICE import
   !>--------------------------------------------------------
-#endif /*USE_CICE*/
+!#endif /*USE_CICE*/
 
 #ifdef USE_MICE
       !Exchange variables btw hydro and ice:
